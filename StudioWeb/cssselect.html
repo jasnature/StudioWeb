@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>css选择器练习</title>
+	</head>
+	<style type="text/css">
+
+		div > strong {
+			color: red;
+		}
+		p+a {
+			color: green;
+			font-weight: bold;
+		}
+		a[bg] {
+			font-size: 18px;
+			color: #778899;
+		}
+		a[bg="123"] {
+			font-size: 80px;
+		}
+		div[tt~="cc"] {
+			font-size: 90px;
+		}
+		div[tt|=kk] {
+			font-size: 70px;
+		}
+		p:first-letter {
+			color: hotpink;
+		}
+		a:hover {
+			color: red;
+		}
+		a:after {
+			content: attr(title);
+		}
+		a:before {
+			content: "前叉";
+		}
+		div~a {
+			text-decoration: line-through;
+		}
+		div[tt*="kk"] {
+			font-size: 100px;
+		}
+		input:checked {
+			margin-left: 50px;
+		}
+		.ggg {
+			font-size: 88px;
+		}
+		.jjj {
+			color: brown;
+		}
+		i + div {
+			border: 1px solid red;
+		}
+	</style>
+
+	<body>
+		<i class="ggg jjj">123</i>
+		<div>
+			<input type="radio" name="" id="" checked="checked" />123
+
+			<strong id="firstStr">我是第一个strong</strong>
+			<a title="【我是title】" href="index.html">首页</a>
+			<p>我是你爸爸
+				<strong>我是第二个strong</strong>
+			</p>
+		</div>
+		<p>
+			<a>ppppppppppppppppp</a>
+			<a>hhhhhhhhhhhhhhhhhh</a>
+		</p>
+		<a title="【我是title】" bg="123">123</a>
+		<a>456</a>
+		<p>#####################</p>
+		<a bg="123">789</a>
+		<br />
+		<br />
+		<br />
+		<a bg>2-123</a>
+		<a>2-456</a>
+		<p>$$$$$$$$$$$$$$$$$$$$$</p>
+		<a title="【我是title】" bg>2-789</a>
+
+		<div tt="gg-jj-kk">123123-36456-12312</div>
+		<i class="ggg jjj">123</i>
+		<div tt="bb cc dd kk">123123-36456-12312</div>
+
+	</body>
+
+</html>

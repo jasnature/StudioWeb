@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>float进阶学习</title>
+    <meta charset="utf-8"/>
+    <style type="text/css">
+    body,html,*{
+    	margin: 0;
+    	padding: 0;
+    }
+        div.p{
+            width: 500px;
+            background: #ccc;
+            /*clear: both;*/
+           position: relative;
+           padding-top: 40px;
+        }
+        .p img{
+        	float: right;
+        	margin: 10px;
+        }
+        
+        .p .title_lab{
+        	position: absolute;
+        	top: 0px;
+        	left: 0px;
+        	background: #333333;
+        	color: #FFFFFF;
+        	padding: 5px;
+        	display: block;
+        	border: 1px solid green;
+        	width: 100%;
+        	box-sizing: border-box;
+        }
+        
+        .cl{
+        	overflow: auto;
+        	zoom: 1;
+        	/*clear: both;*/
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="p">
+    	<span class="title_lab">文字环绕</span>
+        <img src="img/notfound_head.png"/>
+        <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus imperdiet, nulla et dictum interdum, nisi lorem egestas odio, vitae scelerisque enim ligula venenatis dolor. Maecenas nisl est, ultrices nec congue eget, auctor vitae massa. Fusce luctus vestibulum augue ut aliquet. Mauris ante ligula, facilisis sed ornare eu, lobortis in odio. Praesent convallis urna a lacus interdum ut hendrerit risus congue. Nunc sagittis dictum nisi, sed ullamcorper ipsum dignissim ac. In at libero sed nunc venenatis imperdiet sed ornare turpis. Donec vitae dui eget tellus gravida venenatis. Integer fringilla congue eros non fermentum. Sed dapibus pulvinar nibh tempor porta. Cras ac leo purus. Mauris quis diam velit.</div>
+    </div>
+    
+    <div class="p cl">
+    	<span class="title_lab">浮动溢出</span>
+        <img src="img/notfound_head.png"/>
+        <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus imperdiet, nulla et dictum interdum, </div>
+    </div>
+</body>
+</html>

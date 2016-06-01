@@ -1,0 +1,100 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+"http://www.w3.org/TR/html4/strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title></title>
+	</head>
+	<style type="text/css">
+		div {
+			background-color: rgb(216, 228, 208);
+			background-repeat: no-repeat;
+			background-attachment: fixed;
+			height: 1500px;
+			text-transform: lowercase;
+		}
+		strong {
+			color: red;
+		}
+		h2 {
+			color: red;
+		}
+		h2 strong {
+			color: blue;
+		}
+		div>strong {
+			color: peru;
+		}
+		/*.fancy{
+			background: #666;
+		}*/
+		
+		.fancy td {
+			color: #f60;
+			background: #666;
+		}
+		td.fancyred {
+			color: yellow;
+			background: #666;
+		}
+		p{
+			white-space: pre-line;
+			font-family: "微软雅黑","microsoft yahei",monospace;
+			font-variant:all-small-caps;
+		}
+		div#outer {width: 500px;}
+div#inner {text-indent: 10%;}
+div#inner>p {width: 200px;}
+	</style>
+
+	<body>
+		<div class="fancy">
+			<strong class="fancyred">OLSJDFLASDLFJ</strong>
+			<p>The strongly emphasized word in this paragraph is<strong> red</strong>.</p>
+			<h2>This subhead is also red.</h2>
+			<h2>The strongly emphasized word in this subhead is<strong> blue</strong>.</h2>
+			<strong>div>strong2</strong>
+
+			<p>
+1注意 ：                  一般来说，可以为所有块级元素应用 text-indent，
+				但无法将该属性应用于行内元素，图像之类的替换元素上也无法应用 text-indent 属性。
+				不过，如果一个块级元素（比如段落）的首行中有一个图像，它会随该行的其余文本移动。
+				 提示：如果想把一个行内元素的第一行“缩进”，可以用左内边距或外边距创造这种效果。 
+				 使用负值 text-indent 还可以设置为负值。利用这种技术，可以实现很多有趣的效果，比如“悬挂缩进”，
+				 即第一行悬挂在元素中余下部分的左边：
+			</p>
+			<p>2注意：一般来说，可以为所有块级元素应用 text-indent，但无法将该属性应用于行内元素，图像之类的替换元素上也无法应用 text-indent 属性。不过，如果一个块级元素（比如段落）的首行中有一个图像，它会随该行的其余文本移动。 提示：如果想把一个行内元素的第一行“缩进”，可以用左内边距或外边距创造这种效果。 使用负值 text-indent 还可以设置为负值。利用这种技术，可以实现很多有趣的效果，比如“悬挂缩进”，即第一行悬挂在元素中余下部分的左边：
+			</p>
+
+			<div id="outer">
+				<div id="inner">some text. some text. some text.
+					<p>this is a paragragh.</p>
+				</div>
+			</div>
+
+		</div>
+
+		<table border="" cellspacing="" cellpadding="" class="fancy">
+			<tr>
+				<th class="fancy">Header</th>
+				<th>Header2</th>
+				<th>Header3</th>
+			</tr>
+			<tr>
+				<td class="fancyred">Data1</td>
+				<td>Data2</td>
+				<td><span class="fancyred">Data3</span> </td>
+			</tr>
+		</table>
+		
+		<ul>
+			<li>123</li>
+		</ul>
+
+	</body>
+<script type="text/javascript">
+	
+</script>
+</html>

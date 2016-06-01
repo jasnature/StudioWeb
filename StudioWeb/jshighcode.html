@@ -1,0 +1,89 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+"http://www.w3.org/TR/html4/strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<title>高级技巧章节</title>
+	</head>
+
+	<body>
+		<input type="button" id="btn1" value="event bind" />
+	</body>
+
+</html>
+
+<script type="text/javascript">
+	//===================1-构造函数this检查，安全类型检测========================
+	function Polygon(sides) {
+		if (this instanceof Polygon) {
+			this.sides = sides;
+			this.getArea = function() {
+				return 0;
+			};
+		} else {
+			return new Polygon(sides);
+		}
+	}
+
+	function Rectangle(width, height) {
+		//如果使用寄生模式，就会出现问题
+		Polygon.call(this, 2);
+		this.width = width;
+		this.height = height;
+		this.getArea = function() {
+			return this.width * this.height;
+		};
+	}
+	//使用原型连来解决this检查问题
+	Rectangle.prototype = new Polygon();
+	var rect = new Rectangle(5, 10);
+	//alert(rect.sides); //不使用原型连就是 undefined
+	//=========================2-惰性加载函数============================
+	function duox1() {
+		if (arguments[0] === 1) {
+			duox1 = function() {
+				return 1;
+			}
+		} else {
+			duox1 = function() {
+				return 2;
+			}
+		}
+	};
+	duox1(1);
+	var duox2 = (function() {
+		if (arguments[0] === 1) {
+			return function() {
+				return 1;
+			}
+		} else {
+			return function() {
+				return 2;
+			}
+		}
+	})();
+	var handler = {
+		message: "Event handled",
+		handleClick: function(event) {
+			alert(this.message);
+		}
+	};
+	//3=============对象操作权限设定================
+	Object.preventExtensions(handler);
+	Object.seal(handler);
+	Object.freeze(handler);
+	document.getElementById("btn1").addEventListener("click", handler.handleClick.bind(handler));
+	
+	//4================html5 新增有用通道=================
+//	postMessage();
+//	onmessage
+	
+//	history.pushState();
+//	onpopstate
+
+
+
+	
+</script>

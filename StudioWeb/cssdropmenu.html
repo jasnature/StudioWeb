@@ -1,0 +1,343 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>CSS样式三级下拉菜单</title>
+<style>
+@charset "utf-8";
+body{margin:0px; padding:0px; font-family:Verdana, Geneva, sans-serif; font-size:12px; color:#FFF;}
+body a{color:#FFF;}
+
+.box{margin:20px auto; padding:0px; width:1000px;}
+.box ul{margin:0px; padding:0px; list-style:none;}
+.box ul li{margin:0px 2px 0px 0px; padding:0px; width:120px; height:35px; display:inline; float:left; 
+background-color: #333333; border-radius:4px; box-shadow:#333333 0px 0px 1px;}
+
+.box ul li a{text-align:center; width:121px; height:37px; line-height:35px; display:block; text-decoration:none;}
+.box ul li ul{display:none;}
+
+.box ul li ul li{margin:0px 0px 2px 0px; padding:0px; background-color: #333333;}
+.box ul li ul li ul{visibility:hidden; position:relative; top:-37px; left:121px;}
+.box ul li ul li ul li{background:#333333;}
+
+.box ul li:hover ul{display:block;}
+.box ul li ul li:hover{background:#666;}
+.box ul li ul li:hover ul{visibility:visible;}
+
+</style>
+</head>
+<body>
+<div class="box">
+	<ul>
+    	<li><a href="#">123爱好者</a>
+        	<ul>
+                <li><a href="#">Two-level menu</a>
+                	<ul>
+                    	<li><a href="#">Three-level 1111111111111111111111111111menu</a></li>
+                        <li><a href="#">Three-level menu</a></li>
+                        <li><a href="#">Three-level menu</a></li>
+                        <li><a href="#">Three-level menu</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">技术文章</a>
+                	<ul>
+                    	<li><a href="#">Three-level menu</a></li>
+                        <li><a href="#">Three-level menu</a></li>
+                        <li><a href="#">Three-level menu</a></li>
+                        <li><a href="#">Three-level menu</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">源码下载</a>
+                	<ul>
+                    	<li><a href="#">Three-level menu</a></li>
+                        <li><a href="#">Three-level menu</a></li>
+                        <li><a href="#">Three-level menu</a></li>
+                        <li><a href="#">Three-level menu</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">Two-level menu</a>
+                	<ul>
+                    	<li><a href="#">Three-level menu</a></li>
+                        <li><a href="#">Three-level menu</a></li>
+                        <li><a href="#">Three-level menu</a></li>
+                        <li><a href="#">Three-level menu</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">Two-level menu</a>
+                	<ul>
+                    	<li><a href="#">Three-level menu</a></li>
+                        <li><a href="#">Three-level menu</a></li>
+                        <li><a href="#">Three-level menu</a></li>
+                        <li><a href="#">Three-level menu</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+        <li><a href="#">广告联系</a>
+        	<ul>
+                <li><a href="#">Two-level menu</a>
+                	<ul>
+                    	<li><a href="#">Three-level menu</a></li>
+                        <li><a href="#">Three-level menu</a></li>
+                        <li><a href="#">Three-level menu</a></li>
+                        <li><a href="#">Three-level menu</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">Two-level menu</a>
+                	<ul>
+                    	<li><a href="#">Three-level menu</a></li>
+                        <li><a href="#">Three-level menu</a></li>
+                        <li><a href="#">Three-level menu</a></li>
+                        <li><a href="#">Three-level menu</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">Two-level menu</a>
+                	<ul>
+                    	<li><a href="#">Three-level menu</a></li>
+                        <li><a href="#">Three-level menu</a></li>
+                        <li><a href="#">Three-level menu</a></li>
+                        <li><a href="#">Three-level menu</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">Two-level menu</a>
+                	<ul>
+                    	<li><a href="#">Three-level menu</a></li>
+                        <li><a href="#">Three-level menu</a></li>
+                        <li><a href="#">Three-level menu</a></li>
+                        <li><a href="#">Three-level menu</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">Two-level menu</a>
+                	<ul>
+                    	<li><a href="#">Three-level menu</a></li>
+                        <li><a href="#">Three-level menu</a></li>
+                        <li><a href="#">Three-level menu</a></li>
+                        <li><a href="#">Three-level menu</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+        <li><a href="#">最新更新</a>
+        	<ul>
+                <li><a href="#">Two-level menu</a>
+                	<ul>
+                    	<li><a href="#">Three-level menu</a></li>
+                        <li><a href="#">Three-level menu</a></li>
+                        <li><a href="#">Three-level menu</a></li>
+                        <li><a href="#">Three-level menu</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">Two-level menu</a>
+                	<ul>
+                    	<li><a href="#">Three-level menu</a></li>
+                        <li><a href="#">Three-level menu</a></li>
+                        <li><a href="#">Three-level menu</a></li>
+                        <li><a href="#">Three-level menu</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">Two-level menu</a>
+                	<ul>
+                    	<li><a href="#">Three-level menu</a></li>
+                        <li><a href="#">Three-level menu</a></li>
+                        <li><a href="#">Three-level menu</a></li>
+                        <li><a href="#">Three-level menu</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">Two-level menu</a>
+                	<ul>
+                    	<li><a href="#">Three-level menu</a></li>
+                        <li><a href="#">Three-level menu</a></li>
+                        <li><a href="#">Three-level menu</a></li>
+                        <li><a href="#">Three-level menu</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">Two-level menu</a>
+                	<ul>
+                    	<li><a href="#">Three-level menu</a></li>
+                        <li><a href="#">Three-level menu</a></li>
+                        <li><a href="#">Three-level menu</a></li>
+                        <li><a href="#">Three-level menu</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+        <li><a href="#">源代码下载</a>
+        	<ul>
+                <li><a href="#">Two-level menu</a>
+                	<ul>
+                    	<li><a href="#">Three-level menu</a></li>
+                        <li><a href="#">Three-level menu</a></li>
+                        <li><a href="#">Three-level menu</a></li>
+                        <li><a href="#">Three-level menu</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">Two-level menu</a>
+                	<ul>
+                    	<li><a href="#">Three-level menu</a></li>
+                        <li><a href="#">Three-level menu</a></li>
+                        <li><a href="#">Three-level menu</a></li>
+                        <li><a href="#">Three-level menu</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">Two-level menu</a>
+                	<ul>
+                    	<li><a href="#">Three-level menu</a></li>
+                        <li><a href="#">Three-level menu</a></li>
+                        <li><a href="#">Three-level menu</a></li>
+                        <li><a href="#">Three-level menu</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">Two-level menu</a>
+                	<ul>
+                    	<li><a href="#">Three-level menu</a></li>
+                        <li><a href="#">Three-level menu</a></li>
+                        <li><a href="#">Three-level menu</a></li>
+                        <li><a href="#">Three-level menu</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">Two-level menu</a>
+                	<ul>
+                    	<li><a href="#">Three-level menu</a></li>
+                        <li><a href="#">Three-level menu</a></li>
+                        <li><a href="#">Three-level menu</a></li>
+                        <li><a href="#">Three-level menu</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+        <li><a href="#">编程技巧</a>
+        	<ul>
+                <li><a href="#">Two-level menu</a>
+                	<ul>
+                    	<li><a href="#">Three-level menu</a></li>
+                        <li><a href="#">Three-level menu</a></li>
+                        <li><a href="#">Three-level menu</a></li>
+                        <li><a href="#">Three-level menu</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">Two-level menu</a>
+                	<ul>
+                    	<li><a href="#">Three-level menu</a></li>
+                        <li><a href="#">Three-level menu</a></li>
+                        <li><a href="#">Three-level menu</a></li>
+                        <li><a href="#">Three-level menu</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">Two-level menu</a>
+                	<ul>
+                    	<li><a href="#">Three-level menu</a></li>
+                        <li><a href="#">Three-level menu</a></li>
+                        <li><a href="#">Three-level menu</a></li>
+                        <li><a href="#">Three-level menu</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">Two-level menu</a>
+                	<ul>
+                    	<li><a href="#">Three-level menu</a></li>
+                        <li><a href="#">Three-level menu</a></li>
+                        <li><a href="#">Three-level menu</a></li>
+                        <li><a href="#">Three-level menu</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">Two-level menu</a>
+                	<ul>
+                    	<li><a href="#">Three-level menu</a></li>
+                        <li><a href="#">Three-level menu</a></li>
+                        <li><a href="#">Three-level menu</a></li>
+                        <li><a href="#">Three-level menu</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+        <li><a href="/dll">编程控件</a>
+        	<ul>
+                <li><a href="#">Two-level menu</a>
+                	<ul>
+                    	<li><a href="#">Three-level menu</a></li>
+                        <li><a href="#">Three-level menu</a></li>
+                        <li><a href="#">Three-level menu</a></li>
+                        <li><a href="#">Three-level menu</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">Two-level menu</a>
+                	<ul>
+                    	<li><a href="#">Three-level menu</a></li>
+                        <li><a href="#">Three-level menu</a></li>
+                        <li><a href="#">Three-level menu</a></li>
+                        <li><a href="#">Three-level menu</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">Two-level menu</a>
+                	<ul>
+                    	<li><a href="#">Three-level menu</a></li>
+                        <li><a href="#">Three-level menu</a></li>
+                        <li><a href="#">Three-level menu</a></li>
+                        <li><a href="#">Three-level menu</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">电子书籍</a>
+                	<ul>
+                    	<li><a href="#">Three-level menu</a></li>
+                        <li><a href="#">Three-level menu</a></li>
+                        <li><a href="#">Three-level menu</a></li>
+                        <li><a href="#">Three-level menu</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">Two-level menu</a>
+                	<ul>
+                    	<li><a href="#">Three-level menu</a></li>
+                        <li><a href="#">Three-level menu</a></li>
+                        <li><a href="#">Three-level menu</a></li>
+                        <li><a href="#">Three-level menu</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+        <li><a href="#">网页特效</a>
+        	<ul>
+                <li><a href="#">Two-level menu</a>
+                	<ul>
+                    	<li><a href="#">Three-level menu</a></li>
+                        <li><a href="#">Three-level menu</a></li>
+                        <li><a href="#">Three-level menu</a></li>
+                        <li><a href="#">Three-level menu</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">Two-level menu</a>
+                	<ul>
+                    	<li><a href="#">Three-level menu</a></li>
+                        <li><a href="#">Three-level menu</a></li>
+                        <li><a href="#">Three-level menu</a></li>
+                        <li><a href="#">Three-level menu</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">Two-level menu</a>
+                	<ul>
+                    	<li><a href="#">Three-level menu</a></li>
+                        <li><a href="#">Three-level menu</a></li>
+                        <li><a href="#">Three-level menu</a></li>
+                        <li><a href="#">Three-level menu</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">Two-level menu</a>
+                	<ul>
+                    	<li><a href="#">Three-level menu</a></li>
+                        <li><a href="#">Three-level menu</a></li>
+                        <li><a href="#">Three-level menu</a></li>
+                        <li><a href="#">Three-level menu</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">Two-level menu</a>
+                	<ul>
+                    	<li><a href="#">Three-level menu</a></li>
+                        <li><a href="#">Three-level menu</a></li>
+                        <li><a href="#">Three-level menu</a></li>
+                        <li><a href="#">Three-level menu</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+    </ul>
+</div>
+</body>
+</html>

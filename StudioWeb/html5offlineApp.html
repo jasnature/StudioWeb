@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>离线应用</title>
+		<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+	</head>
+
+	<body>
+		<div id="output">
+
+		</div>
+	</body>
+
+	<script type="text/javascript">
+		if (navigator.onLine) {
+			console.log("online");
+		} else {
+			console.log("offline");
+		}
+		localStorage.name = 123;
+		localStorage.setItem("11", 57);
+		//		applicationCache.update();
+		var i = 0;
+		var lasttime = 0;
+
+		function cssfire(time, obj) {
+			var diff = time - lasttime;
+			output.innerHTML = diff++;
+			lasttime = time;
+			//requestAnimationFrame(arguments.callee);
+		}
+		requestAnimationFrame(cssfire);
+		document.addEventListener("visibilitychange", function() {
+			console.log(document.hidden);
+		})
+		window.onload = function() {
+			navigator.geolocation.getCurrentPosition(function(obj) {
+				console.log(obj);
+			}, function(error) {
+				console.log(error);
+			}, {
+				enableHighAccuracy: false,
+				timeout: 5000,
+				maximumAge: 25000
+			});
+		}
+		if (true) {
+			let t = 132;
+		}
+		
+	</script>
+
+</html>

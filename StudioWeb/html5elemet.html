@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		
+		<title></title>
+		<style type="text/css">
+			.drag {
+				height: 100px;
+				width: 100%;
+				background-color: #ff22ff;
+				color: white;
+				margin-top: 20px;
+			}
+			.canvasdiv {
+				height: 300px;
+				width: 300px;
+				border: 1px solid red;
+				margin-top: 10px;
+			}
+			#navList>li:hover{
+				transform: rotateX(120deg);
+				transition-duration: 0.2s;;
+				transition-timing-function: cubic-bezier(0, 1.65, 0.58, 1);
+				background-color: #FFFFFF;
+			}
+		</style>
+		<script type="text/javascript">
+			function allowDrop(ev) {
+				ev.preventDefault();
+			}
+var a =navigator.geolocation.getCurrentPosition(function (positiono) {
+	//alert(positiono);
+});
+			function drag(ev) {
+				ev.dataTransfer.setData("Text", ev.target.id);
+			}
+
+			function drop(ev) {
+				ev.preventDefault();
+				var data = ev.dataTransfer.getData("Text");
+				ev.target.appendChild(document.getElementById(data));
+			}
+
+			function cantest() {
+				var can = document.getElementById("cangrp");
+				var cantxt = can.getContext("2d");
+				cantxt.fillRect(0, 0, 150, 75);
+				cantxt.fillStyle = "#FFFFFF";
+				cantxt.fillText("我你是抖个", 50, 50);
+				var imgs = new Image();
+				imgs.src = "img/home_second_a.png";
+				cantxt.drawImage(imgs, 50, 50);
+			}
+		</script>
+	</head>
+
+	<body>
+		<video id="myvideo" width="200" height="" controls="controls">
+			<source src="http://player.youku.com/player.php/sid/XMTM3NTUwMjc2OA==/v.swf" type="video/mp4"></source>
+			<object width="" height="" type="application/x-shockwave-flash" data="myvideo.swf">
+				<param name="movie" value="myvideo.swf" />
+				<param name="flashvars" value="autostart=true&amp;file=myvideo.swf" />
+			</object>
+			当前浏览器不支持 video直接播放，点击这里下载视频： <a href="myvideo.webm">下载视频</a>
+		</video>
+		<audio controls="controls">
+
+		</audio>
+		<div id="div1" class="drag" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+		<img id="drag1" src="img/about_facebook.png" draggable="true" ondragstart="drag(event)" width="336" height="69" />
+		<div id="div2" class="drag" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+
+		<canvas class="canvasdiv" id="cangrp" width="" height="">
+			当前浏览器不支持 canvas直接播放
+		</canvas>
+		<button id="btncan" onclick="cantest()">绘制</button>
+
+		<svg xmlns="http://www.w3.org/2000/svg" class="canvasdiv" version="1.1" height="190">
+			<polygon points="100,15 40,180 190,60 10,60 160,180 " style="fill:lime;stroke:purple;stroke-width:5;fill-rule:evenodd;" />
+		</svg>
+
+	</body>
+
+	<script type="text/javascript">
+		var mv = document.getElementById("myvideo");
+	</script>
+
+</html>

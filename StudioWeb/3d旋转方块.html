@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="UTF-8">
+		<title>3d旋转方块</title>
+		<style type="text/css">
+			.m-demo { position: absolute; top: 50%; left: 50%; width: 400px; height: 400px; margin: -200px; perspective: 1000px; cursor: default;}
+			.m-demo .box { position: absolute; background-color: rgba(255, 255, 20, 0.5);; width: 100%; height: 100%; transform-style: preserve-3d; 
+			-webkit-animation: rotate 1s 2s linear infinite both;}
+			.m-demo .box>div {position: absolute; width: 100%; height: 100%; box-sizing: border-box; border: 2px solid rgba(0,0,0,0.8); transition: 1s linear; text-align: center; 
+				line-height: 400px; font-size: 50px; color: rgba(99, 99, 255, 0);
+				}
+				
+			.m-demo .box>div:nth-child(1){
+				background-color: rgba(12, 12, 100, 0.3);
+			}
+			.m-demo .box>div:nth-child(2){
+				background-color: rgba(12, 100, 12, 0.3);
+			}
+			.m-demo .box>div:nth-child(3){
+				background-color: rgba(100, 12, 12, 0.3);
+			}
+			.m-demo .box>div:nth-child(4){
+				background-color: rgba(56, 100, 56, 0.3);
+			}
+			.m-demo .box>div:nth-child(5){
+				background-color: rgba(56, 56, 100, 0.3);
+			}
+			.m-demo .box>div:nth-child(6){
+				background-color: rgba(100, 56, 56, 0.3);
+			}
+	
+			/*.m-demo:hover .box>div { border-color: rgba(0, 0, 0, 0); color: #fff;}
+			.m-demo:hover .box .top {background: rgba(255, 255, 0, 0.6);}
+			.m-demo:hover .box .bottom {background: rgba(0, 255, 0, 0.6);}
+			.m-demo:hover .box .left {background: rgba(0, 255, 255, 0.6);}
+			.m-demo:hover .box .right {background: rgba(255, 255, 0, 0.6);}
+			.m-demo:hover .box .front {background: rgba(255, 0, 0, 0.6);}
+			.m-demo:hover .box .back {background: rgba(0, 0, 255, 0.6);}*/
+	
+			.m-demo .box .top {-webkit-animation: top 2s 2s linear both, color 2s 2s ease both;}
+			.m-demo .box .bottom {-webkit-animation: bottom 2s 4s linear both, color 2s 4s ease both;}
+			.m-demo .box .left {-webkit-animation: left 2s 6s linear both, color 2s 6s ease both;}
+			.m-demo .box .right {-webkit-animation: right 2s 8s linear both, color 2s 8s ease both;}
+			.m-demo .box .back {-webkit-animation: back 2s 10s linear both, color 2s 10s ease both;}
+			.m-demo .box .front {-webkit-animation: front 2s 12s linear both, color 2s 12s ease both;}
+			
+	
+			@-webkit-keyframes rotate {
+				100% {
+					-webkit-transform: rotate3d(150,50,50,360deg);
+					
+				}
+			}
+	
+			@-webkit-keyframes color {
+				100% {color: #000;}
+			}
+	
+			@-webkit-keyframes top {
+				100% {-webkit-transform: rotateX(90deg) translateZ(200px);}
+			}
+	
+			@-webkit-keyframes bottom {
+				100% {-webkit-transform: rotateX(-90deg) translateZ(200px);}
+			}
+	
+			/*
+			旋转后的坐标已经发生变化，translateZ其实就是向各自的方向移动200px。
+			比如left旋转后，z轴的正方向不再是指向屏幕外，而是指向了左边。而且transfrom-origin的默认值是
+			transform-origin: 50% 50%;
+			 */
+	
+			@-webkit-keyframes left {
+				100% {-webkit-transform: rotateY(-90deg) translateZ(200px);}
+			}
+	
+			@-webkit-keyframes right {
+				100% {-webkit-transform: rotateY(90deg) translateZ(200px);}
+			}
+	
+			@-webkit-keyframes front {
+				100% {-webkit-transform: translateZ(200px);}
+			}
+	
+			@-webkit-keyframes back {
+				100% {-webkit-transform: rotateY(180deg) translateZ(200px);}
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="m-demo">
+			<div class="box">
+				<div class="top">top</div>
+				<div class="bottom">bottom</div>
+				<div class="left">left</div>
+				<div class="right">right</div>
+				<div class="front">front</div>
+				<div class="back">back</div>
+			</div>
+		</div>
+		
+		
+	</body>
+
+</html>

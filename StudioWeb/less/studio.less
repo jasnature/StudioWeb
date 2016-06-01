@@ -1,0 +1,143 @@
+@b:#123fff;
+@abc:color;
+@say:'i say';
+@font-base-size:10;
+@list:"1","2","3";
+
+.aini{
+	background: rgb(11,11,255);
+//	background: data-uri("../img/about_facebook.png");
+}
+
+.pig:extend(.aini){
+	background-clip: border-box;
+}
+
+.mixin() {
+  transform+_: scale(2);
+}
+.myclass {
+  .mixin();
+  transform+_: rotate(15deg);
+}
+
+.bijiao(@a,@b) when (@a>5),(@b=10){
+	border-bottom-left-radius: @a;
+}
+
+
+.jit{
+	.bijiao(4,10);
+}
+
+.screencolor{
+  @media screen {
+    color: green;
+    @media (min-width:768px) {
+    	color: red;
+    	
+    }
+  }
+  @media tv {
+    color: black;
+  }
+}
+
+@media screen{
+	.123{
+		color: red;
+	}
+	.456:extend(.mintext){
+		display: block;
+	}
+}
+
+.@{say}{
+	@{abc}: red;
+	display: block;
+	
+}
+
+.gg:extend(.mintext ){
+	color: #000000;
+	#bundle > .button !important; 
+}
+ 
+/*123*/
+#bundle {
+  .button () {
+    display: block;
+    border: 1px solid black;
+    background-color: grey;
+    background-attachment: url("@{say}");
+    &:hover { background-color: white }
+  }
+  .tab() { display: block; }
+  .citation() { display: block; }
+}
+
+.bu(@a:#fff) when (iscolor(@a)){
+	color: @arguments;
+	background: 11;
+	border-color: @b;
+}
+ 
+.min(a1,@cc:#ddd){
+	color: @cc;
+}
+
+.min(@_,@cc:#ddd){
+	display: block;
+}
+
+.min2(@a) when (@a>1) and not (@a<10){
+	font-size: ~"@{a}px";
+	height: (1/16 * @font-base-size)rem;
+	
+}
+
+.minddd(@a,@rest...){
+	color: @rest;
+	border: @a;
+}
+
+.mintext{
+	.min2(@a:11);
+	.minddd(123,456,678);
+	#bundle>.button;
+}
+
+.bu1{
+	p{
+	background-color: desaturate(@b,10%);
+		a{
+			color: @b;
+			
+			&:hover{
+				border-width: 5px;
+			}
+			
+		}
+		
+		b{
+			color: @b;
+		}
+	}
+	
+	.font{
+		caption-side: bottom;
+	}
+}
+
+ /*456*/
+#head{
+	.bu(#ddd); 
+}
+
+
+#hh{
+	-webkit-background: @abc;
+	&:before{
+		content: @say;
+	}
+}

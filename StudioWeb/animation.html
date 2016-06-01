@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			@keyframes spaceletter {
+				50% {
+					transform:skewY(80deg);
+				}
+			}
+			.word {
+				animation-name: spaceletter;
+				animation-duration: 5s;
+				animation-fill-mode: both;
+				animation-iteration-count: infinite;
+				animation-timing-function:ease-in-out;
+				transform-origin: center center;
+				transform-style: preserve-3d;
+				backface-visibility: visible;
+				
+				perspective: 50px;	
+				font-size: 50px;
+				position: absolute;
+				bottom: 0px;
+				background-color: #ff33ff;
+				height: 250px;
+			}
+			.layout{
+				position: relative;
+				border:1px solid red;
+				margin-top: 100px;
+				margin-left: 500px;
+				height: 350px;
+				width: 600px;
+				perspective:500px;
+				perspective-origin: center;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="layout">
+			<div class="word">
+				my name is king world!
+			</div>
+		</div>
+	</body>
+
+</html>

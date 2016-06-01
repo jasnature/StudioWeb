@@ -1,0 +1,110 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+"http://www.w3.org/TR/html4/strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title></title>
+		<style type="text/css">
+			* {
+				margin: 0;
+				padding: 0;
+				list-style-type: none;
+			}
+			
+			html,
+			body {
+				font-family: "微软雅黑", "microsoft yahei", arial;
+			}
+			
+			#search {
+				width: 500px;
+				height: 40px;
+				margin: 20% auto;
+			}
+			
+			#search .searchbox {
+				position: relative;
+				border: 1px solid #B0B0B0;
+				width: 500px;
+				height: 40px;
+				padding-left: 10px;
+			}
+			
+			.searchbox input {
+				box-sizing: border-box;
+			}
+			
+			.searchbox input[type="text"] {
+				border: 0px;
+				outline: none;
+				height: 40px;
+				width: 80%;
+				font-size: 18px;
+			}
+			
+			#searchcon:focus + div {
+				display: block;
+			}
+			
+			.searchbox input[type="submit"] {
+				height: 40px;
+				width: 19%;
+				font-size: 18px;
+			}
+			
+			#search .searchsug {
+				display: none;
+				position: absolute;
+				border: 1px solid #B0B0B0;
+				width: 80%;
+				left: -1px;
+				top: 40px;
+				background-color: #B0B0F0;
+			}
+			
+			#search .searchsug ul {}
+			
+			#search .searchsug ul>li {
+				height: 22px;
+				line-height: 22px;
+				cursor: pointer;
+				min-width: 80px;
+			}
+			
+			#search .searchsug>ul li:hover {
+				background-color: #B0B0F0;
+			}
+			
+			select{
+				
+			}
+		</style>
+	</head>
+
+	<body>
+		<div id="search">
+			<form action="" method="post">
+
+				<div class="searchbox">
+					<input type="text" id="searchcon" value="" placeholder="请输入搜索词" />
+					<div class="searchsug">
+						<ul>
+							<li>搜索建议01</li>
+							<li>搜索建议02</li>
+							<li>搜索建议03</li>
+							<li>搜索建议04</li>
+							<li>搜索建议05</li>
+							<li>搜索建议06</li>
+							<li>搜索建议07</li>
+							<li>搜索建议08</li>
+						</ul>
+					</div>
+					<input type="submit" id="" value="搜索" />
+				</div>
+			</form>
+		</div>
+	</body>
+
+</html>

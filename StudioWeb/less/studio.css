@@ -1,0 +1,94 @@
+.aini,
+.pig {
+  background: #0b0bff;
+}
+.pig {
+  background-clip: border-box;
+}
+.myclass {
+  transform: scale(2) rotate(15deg);
+}
+.jit {
+  border-bottom-left-radius: 4;
+}
+@media screen {
+  .screencolor {
+    color: green;
+  }
+}
+@media screen and (min-width: 768px) {
+  .screencolor {
+    color: red;
+  }
+}
+@media tv {
+  .screencolor {
+    color: black;
+  }
+}
+@media screen {
+  .123 {
+    color: red;
+  }
+  .456 {
+    display: block;
+  }
+}
+.'i say' {
+  color: red;
+  display: block;
+}
+.gg {
+  color: #000000;
+  display: block !important;
+  border: 1px solid black !important;
+  background-color: grey !important;
+  background-attachment: url("i say") !important;
+}
+.gg:hover {
+  background-color: white !important;
+}
+/*123*/
+.mintext,
+.gg,
+.gg:hover {
+  font-size: 11px;
+  height: 0.625 rem;
+  color: 456 678;
+  border: 123;
+  display: block;
+  border: 1px solid black;
+  background-color: grey;
+  background-attachment: url("i say");
+}
+.mintext:hover {
+  background-color: white;
+}
+.bu1 p {
+  background-color: #1e46f3;
+}
+.bu1 p a {
+  color: #123fff;
+}
+.bu1 p a:hover {
+  border-width: 5px;
+}
+.bu1 p b {
+  color: #123fff;
+}
+.bu1 .font {
+  caption-side: bottom;
+}
+/*456*/
+#head {
+  color: #ddd;
+  background: 11;
+  border-color: #123fff;
+}
+#hh {
+  -webkit-background: color;
+}
+#hh:before {
+  content: 'i say';
+}
+/*# sourceMappingURL=studio.css.map */

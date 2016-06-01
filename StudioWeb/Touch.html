@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<meta charset="UTF-8" />
+		<style type="text/css">
+			#canvas {
+				border: 1px solid red;
+				width: 100px;
+				height: 100px;
+				position: absolute;
+				left: 50px;
+				top: 50px;
+			}
+		</style>
+
+	</head>
+
+	<body>
+		<div id="output"></div>
+		<div id="canvas">
+
+		</div>
+
+	</body>
+	<script type="text/javascript">
+		var lastTouch = null;
+		var canObj = document.getElementById("canvas");
+		var sildeArea = 70;
+		window.addEventListener("touchstart", function(event) {
+			event.preventDefault();
+			var a = event.touches[0];
+			lastTouch = event.changedTouches[0];
+			printInfo("start", a);
+		}, false);
+		window.addEventListener("touchmove", function(event) {
+			event.preventDefault();
+			var a = event.touches[0];
+			if (lastTouch) {
+				if (a.clientX - lastTouch.clientX > sildeArea) {
+					printInfo("move-right", a);
+					return;
+				} else if (a.clientX - lastTouch.clientX < -sildeArea) {
+					printInfo("move-left", a);
+					return;
+				} else if (a.clientY - lastTouch.clientY > sildeArea) {
+					printInfo("move-down", a);
+					return;
+				} else if (a.clientY - lastTouch.clientY < -sildeArea) {
+					printInfo("move-up", a);
+					return;
+				}
+			}
+			printInfo("move", a);
+		}, false);
+		window.addEventListener("touchend", function(event) {
+			event.preventDefault();
+			printInfo("end", event.touches[0]);
+		}, false);
+
+		function printInfo(evName, toucheObj) {
+			if (toucheObj) {
+				canObj.style.left = toucheObj.clientX - 50 + "px";
+				canObj.style.top = toucheObj.clientY - 50 + "px";
+				output.innerHTML = evName + "【clientX=" + toucheObj.clientX + " clientY=" + toucheObj.clientY + "】";
+			}
+		}
+	</script>
+
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>html5新特性编程
+		</title>
+	</head>
+
+	<body>
+
+		<input type="button" id="" value="打开窗口" onclick="openwin()" />
+
+		<input type="button" id="" value="发送消息" onclick="postmsg()" />
+		
+		<input type="button" id="" value="创建历史记录" onclick="createState()" />
+	</body>
+
+	<script type="text/javascript">
+		var win = null;
+		var i=0;
+
+		function openwin() {
+			win = open(location.href,"new-kk"+i++);
+		}
+
+		function postmsg() {
+			win.postMessage("123", "*");
+		}
+		window.onmessage = function(fun7) {
+			console.log(fun7);
+			if (opener) {
+				opener.postMessage("收到"+fun7.data, "*");
+			}
+		}
+		
+		function createState () {
+			var a = (Math.random()*1000);
+			history.pushState({id:a},"11","html5jsattrbute.html?id="+a);
+		}
+		
+		window.onpopstate=function (event) {
+			console.log(event.state);
+		}
+		
+		//throw new Error("3242342");
+	</script>
+
+</html>

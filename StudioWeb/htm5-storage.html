@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+
+	<body>
+		<script type="text/javascript">
+			if (localStorage.pagecount) {
+				localStorage.pagecount = Number(localStorage.pagecount) + 1;
+			} else {
+				localStorage.pagecount = 1;
+			}
+			document.write("Visits " + localStorage.pagecount + " time(s).");
+		</script>
+
+		<script type="text/javascript">
+			if (sessionStorage.pagecount) {
+				sessionStorage.pagecount = Number(sessionStorage.pagecount) + 1;
+			} else {
+				sessionStorage.pagecount = 1;
+			}
+			document.write("Visits " + sessionStorage.pagecount + " time(s) this session.");
+		</script>
+
+	</body>
+
+</html>

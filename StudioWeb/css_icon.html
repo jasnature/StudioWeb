@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>CSS画图标</title>
+		<link rel="stylesheet" type="text/css" href="abcd.css"/>
+		<style type="text/css">
+			.bo {
+				width: 300px;
+				height: 300px;
+				margin-right: 20px;
+				margin-bottom: 20px;
+				transform: scale(1);
+				box-shadow: 2px 3px 5px 2px #B0B0B0;
+				display: inline-block;
+			}
+			
+			.wechart {
+				width: 300px;
+				height: 300px;
+				background-color: #08c406;
+				border-radius: 10px;
+				position: relative;
+			}
+			
+			.w_inner {
+				width: 180px;
+				height: 150px;
+				border-radius: 50%;
+				background-color: #fff;
+				position: absolute;
+				top: 60px;
+				left: 35px;
+			}
+			
+			.wechart .w_inner::before {
+				position: absolute;
+				left: 90px;
+				top: 60px;
+				content: "";
+				width: 140px;
+				height: 120px;
+				border-radius: 50%;
+				background-color: #fff;
+				border: 3px solid #08c406;
+			}
+			
+			.wechart::before {
+				position: absolute;
+				left: 155px;
+				top: 150px;
+				content: "";
+				width: 16px;
+				height: 16px;
+				border-radius: 50%;
+				background-color: #08c406;
+				z-index: 2;
+				box-shadow: 70px 0 #08c406, -70px -50px 0 2px #08c406, 0 -50px 0 2px #08c406;
+			}
+			
+			.wechart:before:after {
+				position: absolute;
+				content: "";
+				width: 16px;
+				height: 16px;
+				background-color: red;
+			}
+			
+			.wechart::after {
+				content: "";
+				border-width: 30px 12px;
+				border-style: solid;
+				border-color: #fff transparent transparent transparent;
+				position: absolute;
+				top: 182px;
+				left: 50px;
+				transform: rotate(45deg);
+			}
+			
+			.w_inner::after {
+				content: "";
+				border-width: 30px 10px;
+				border-style: solid;
+				border-color: #fff transparent transparent transparent;
+				position: absolute;
+				top: 155px;
+				left: 200px;
+				transform: rotate(-45deg);
+			}
+			
+			.wechart:hover:after{
+				animation: wejiao 1s infinite linear;
+				animation-iteration-count:infinite;
+			}
+			
+			.wechart:hover>.w_inner::after{
+				animation: rwejiao 1s infinite linear;
+				animation-iteration-count:infinite;
+			}
+			
+			@keyframes wejiao{
+				0%{transform: rotate(45deg);}
+				25%{transform: rotate(55deg);}
+				50%{transform: rotate(45deg);}
+				75%{transform: rotate(30deg);}
+				100%{transform: rotate(45deg);}
+			}
+			
+			@keyframes rwejiao{
+				0%{transform: rotate(-45deg);}
+				25%{transform: rotate(-55deg);}
+				50%{transform: rotate(-45deg);}
+				75%{transform: rotate(-30deg);}
+				100%{transform: rotate(-45deg);}
+			}
+			
+			.taiji {
+				border-radius: 50%;
+				background: -moz-linear-gradient(center left, #fff, #fff 50%, black 50%, black);
+				background: -webkit-gradient(linear, left center, right center, from(#fff), color-stop(50%, #fff), color-stop(50%, black), to(black));
+				background: -o-linear-gradient(left, #fff, #fff 50%, black 50%, black);
+			}
+			
+			.taiji:before {
+				width: 20%;
+				height: 20%;
+				border-radius: 50%;
+				left: 40%;
+				top: 15%;
+				background: #000;
+				box-shadow: 0 0 0 .15em #fff;
+			}
+			
+			.taiji:after {
+				width: 20%;
+				height: 20%;
+				border-radius: 50%;
+				left: 40%;
+				bottom: 15%;
+				background: #fff;
+				box-shadow: 0 0 0 .15em #000;
+			}
+			
+			.taiji:hover {
+				-webkit-animation: taiji-animation 4s infinite linear;
+			}
+			
+			@-webkit-keyframes taiji-animation {
+				0% {
+					-webkit-transform: rotate(0deg);
+				}
+				50% {
+					-webkit-transform: rotate(180deg);
+				}
+				100% {
+					-webkit-transform: rotate(360deg);
+				}
+			}
+			
+			.qintao{
+				background-color: #E64646;
+				position: relative;
+				
+			}
+			
+			.qintao:after{
+				position: absolute;
+				height: 350px;
+				width: 100px;
+				top: 40px;
+				left: 85px;
+				content: "";
+				border: 15px solid #FFFFFF;
+				background-color: transparent;
+				border-radius: 120% 120% 0 0 / 50% 50% 0 0;
+				box-shadow:  -1px -1px 3px 1px #B0B0B0 , 1px 1px 3px 1px #B0B0B0;
+			}
+			
+		</style>
+	</head>
+
+	<body>
+		<div class="wechart bo">
+			<div class="w_inner"></div>
+		</div>
+		<div class="qintao bo">
+			
+		</div>
+		<div class="taiji bo">
+
+		</div>
+		<div class="T">
+			
+		</div>
+	</body>
+
+</html>

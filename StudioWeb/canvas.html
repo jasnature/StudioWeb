@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<style type="text/css">
+		#cc {
+			border: 1px solid #008000;
+		}
+		
+		#jtsrc {
+			width: 500px;
+			height: 500px;
+			border: 1px solid red;
+			display: inline-block;
+		}
+	</style>
+
+	<body>
+		<canvas id="cc" width="1000" height="800">
+			不支持html5
+		</canvas>
+
+		<div src="" id="jtsrc" style=""></div>
+		<input type="button" name="" id="jt" value="截图" />
+	</body>
+	<script type="text/javascript">
+		(function(win) {
+			var qq2d, obj = document.getElementById("cc"),
+				can = obj.getContext("2d");
+			can.fillStyle = "#333333";
+			can.strokeStyle = "red";
+			can.font = "bold 18px 微软雅黑";
+			//			can.textAlign="center";
+			//			can.textBaseline="middle";
+			can.lineWidth = "2";
+			can.lineCap = "round";
+			can.lineJoin = "round";
+			can.shadowOffsetX = 5;
+			can.shadowOffsetY = 5;
+			can.shadowBlur = 4;
+			can.shadowColor = "rgba(0, 0, 0, 0.5)";
+			//绘图对象
+			qq2d = function(opt) {
+				this._ = can;
+				this.con=obj;
+				this.drawtest = function() {
+					this.cc();
+					can.fillText("我是爸爸", 120, 120);
+					can.strokeText("我是爸爸", 100, 100);
+					can.fillRect(80, 150, 150, 150);
+					can.strokeRect(180, 250, 150, 150);
+					can.clearRect(130, 170, 42, 42);
+					can.beginPath();
+					can.arc(150, 150, 100, 0, 2 * Math.PI, true);
+					can.arcTo(300, 150, 370, 300, 100);
+					can.moveTo(0, 150);
+					can.lineTo(400, 150);
+					can.moveTo(320, 0);
+					can.lineTo(320, 400);
+					can.quadraticCurveTo(Math.random() * 1000, 100, 0, 0);
+					//can.closePath();
+					can.stroke();
+				};
+				this.drawClock = function() {
+					this.cc();
+					can.beginPath();
+					can.arc(250, 250, 200, 0, 2 * Math.PI, true);
+					can.moveTo(250 + 200 - 20, 250);
+					can.arc(250, 250, 180, 0, 2 * Math.PI, true);
+					can.moveTo(250, 250);
+					can.lineTo(250, 150);
+					can.moveTo(250, 250);
+					can.lineTo(100, 250);
+					//can.fillText("我是时钟", 50, 50);
+					var rat = 30,
+						x, y, i;
+					//for (var i = 1; i <= 9; i++) {
+					x = 250 + (180 * Math.cos((i - 1) * rat));
+					y = 250 + (180 * Math.sin((i - 1) * rat));
+					can.fillText("0" + i, x, y);
+					//}
+					can.stroke();
+					can.closePath();
+				};
+				this.drawimg = function() {
+					this.cc();
+					var img = new Image();
+					img.src = "img/about_facebook.png";
+					img.onload = function() {
+						can.drawImage(img, 0, 0, 400, 100);
+						img = null;
+					}
+				};
+				this.bian_rotate = function() {
+					this.cc();
+					
+					var img = new Image();
+					img.src = "img/about_facebook.png";
+					img.onload = function() {
+						can.drawImage(img, 0, 0, 400, 100);
+					}
+					can.translate(250, 250);
+					var ra = 0;
+					//					setInterval(function() {
+					//						ra += 30;
+					//						can.rotate(ra);
+					//						if (ra == 360) ra = 0;
+					//
+					//					}, 500);
+					this.rot(360);
+					//can.scale(0.5, 0.5);
+				};
+				this.jianbian = function() {
+					var gd = can.createLinearGradient(0, 0, 500, 500);
+					gd.addColorStop(0, "white");
+					gd.addColorStop(0.3, "red");
+					gd.addColorStop(0.6, "green");
+					gd.addColorStop(1, "black");
+					//绘制渐变矩形
+					can.fillStyle = gd;
+					can.fillRect(0, 0, 500, 500);
+				};
+				this.mode = function() {
+					var img = new Image();
+					img.src = "img/loading.gif";
+					img.onload = function() {
+						var pattern = can.createPattern(img, "repeat");
+						can.fillStyle = pattern;
+						can.fillRect(0, 0, 150, 500);
+					}
+				}
+				this.imgdata = function() {
+					var imgdata = can.getImageData(0, 0, 500, 500);
+					var sdata = imgdata.data,
+						red = sdata[0],
+						green = sdata[1],
+						blue = sdata[2],
+						alpha = sdata[3];
+					for (var i = 0; i < sdata.length; i += 4) {
+						var rnd = (Math.random() * 255);
+						sdata[i] = sdata[i] + rnd;
+						sdata[i + 1] = sdata[i + 1] + rnd;
+						sdata[i + 2] = sdata[i + 2] + rnd;
+						sdata[i + 3] = 150;
+					}
+					//回写图像数据并显示结果
+					imgdata.data = sdata;
+					can.putImageData(imgdata, 0, 0);
+				};
+				this.hecheng = function() {
+					//绘制红色矩形
+					can.fillStyle = "#ff0000";
+					can.fillRect(10, 10, 50, 50);
+					//修改全局透明度
+					//can.globalAlpha = 0.3;
+					can.globalCompositeOperation="destination-over";
+					//绘制蓝色矩形
+					can.fillStyle = "rgba(0,0,255,1)";
+					can.fillRect(30, 30, 50, 50);
+					//重置全局透明度
+					//can.globalAlpha = 0;
+				};
+				
+				var maps = [
+					[30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30],
+					[31, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,31],
+					[31, 26, 0, 0,26,26, 0, 0, 0,26,26, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,0,31],
+					[31, 26, 0,26, 0, 0,26, 0,26, 0, 0,26, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,0,31],
+					[31, 26, 0,26, 0, 0, 0,26, 0, 0, 0,26, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,0,31],
+					[31, 26, 0, 0,26, 0, 0, 26, 0, 0,26, 0, 0,26, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,0,31],
+					[31, 26, 0, 0, 0,26, 0, 26, 0,26, 0, 0, 0,26, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,0,31],
+					[31, 26, 0, 0, 0, 0,26, 26,26, 0, 0, 0, 0,26, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,0,31],
+					[31, 26,26,26,26, 0, 0,26, 0, 0,26,26,26,26, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,0,31],
+					[31, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,0,31],
+					[31, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,0,31],
+					[31, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,0,31],
+					[31, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,0,31],
+					[31, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,0,31],
+					[31, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,0,31],
+					[31, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,0,31],
+					[31, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,0,31],
+					[30,30,30,30,30,30,31,23,31,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30]
+				]
+				
+				var img=new Image();
+					img.src="img/tanks_sheet.png";
+				
+				this.drawMap=function () {
+						
+					var dx,dy,sx,sy;
+					can.drawImage(img,10,605,256,128);
+					for (var i = 0; i < maps.length; i++) {
+						var item = maps[i];
+						for (var j = 0; j < item.length; j++) {
+							
+							dx=j*32;//绘制位置x
+							dy=i*32;//绘制位置y
+							sx=Math.floor(maps[i][j]%8)*32;//计算x相对大图位置
+							sy=Math.floor(maps[i][j]/8)*32;//计算y相对大图位置
+							can.drawImage(img,sx,sy,32,32,dx,dy,32,32);
+
+						}
+					}
+					
+				}
+				
+				this.drawtank=function (loc) {
+					if(loc)
+					{
+//						can.clearRect(loc.x-16,loc.y-16,32,32);
+var num = Math.ceil(Math.random()*24);
+						sx=Math.floor(num%8)*32;//计算x相对大图位置
+						sy=Math.floor(num/8)*32;//计算y相对大图位置
+						can.drawImage(img,sx,sy,32,32,loc.x-16,loc.y-16,32,32);
+					}
+				}
+				
+				this.cc = function() {
+					can.restore();
+					can.clearRect(0, 0, 500, 500);
+					can.beginPath();
+					can.arc(250, 250, 3, 0, 2 * Math.PI, false);
+					can.stroke();
+					can.closePath();
+					can.save();
+				};
+				this.rot = function(ra) {
+					can.rotate(ra);
+				};
+				this.say = function() {
+					console.log(opt);
+				};
+				this.savepic = function() {
+					return obj.toDataURL("image/png");
+				};
+			};
+			win.qq2d = qq2d;
+			
+		})(window);
+		
+		
+		var a = new qq2d({
+			id: 123,
+			name: "josn"
+		});
+		//a.mode();
+		//a.jianbian();
+		//a.drawClock();
+		//a.bian_rotate();
+		//a.imgdata();
+		//a.drawMap();
+		document.getElementById("jt").addEventListener("click", function() {
+			document.getElementById("jtsrc").setAttribute("style", "background-image:url(" + a.savepic() + ");");
+		})
+		
+		
+		a.con.addEventListener("mousedown",function (event) {
+			if (event) {
+				a.drawtank({x:event.offsetX,y:event.offsetY});
+				
+				if(event.ctrlKey){
+					setInterval(function () {
+						var x1=Math.ceil(Math.random()*1000);
+						var y1=Math.ceil(Math.random()*800);
+						a.drawtank({x:x1,y:y1});
+						
+					},100);
+				}
+			}
+
+		});
+		
+		
+		
+	</script>
+
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>box弹性盒子布局</title>
+	</head>
+	<style type="text/css">
+	*{
+		margin: 0;
+		padding: 0;
+	}
+		#layout {
+			overflow: hidden;
+			height: 800px;
+			border: 1px solid red;
+			
+		}
+		
+		#flexBox {
+			border: 1px solid red;
+			height: 800px;
+			margin-right: -11px;
+			box-sizing: border-box;
+			display: box;
+			display: -webkit-box;
+		}
+		
+		#flexBox>div {
+			border: 1px solid red;
+			margin-right: 10px;
+			box-sizing: border-box;
+			 padding: 35% 1em; 
+		}
+	</style>
+
+	<body>
+		<div id="layout">
+			<div id="flexBox">
+				<div style="-webkit-box-flex: 1;">1</div>
+				<div style="-webkit-box-flex: 3;">2</div>
+				<div style="-webkit-box-flex: 1;">3</div>
+			</div>
+		</div>
+	</body>
+
+</html>

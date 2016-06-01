@@ -1,0 +1,145 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>JS完整学习目录</title>
+		<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+		<script src="js/base.js" type="text/javascript" charset="utf-8"></script>
+
+		<script defer="defer" src="jsstudio.js" type="text/javascript" charset="utf-8"></script>
+		<link rel="stylesheet" type="text/css" href="css/base.css" />
+		<style type="text/css">
+			#d1 {
+				border: 10px solid red;
+				padding: 10px;
+			}
+		</style>
+	</head>
+
+	<body>
+		<input type="button" name="" id="mybtn" value="on click" />
+		<input type="text" name="" id="mytxt" value="" />
+		<div id="head" style="text-align: center; color: red;font-size: x-large;" onclick="return cli('123')">
+			123
+		</div>
+		<div id="d1" style="height: 500px;">
+			d1 asdasd sdg dfh dfh
+			<div id="d11">d11</div>
+		</div>
+		<div id="d2" style="height: 500px;">
+			<div id="d21">d21</div>
+			d2
+		</div>
+		<a id="a123" name="" href="#head">123123</a>
+		<div id="d3" style="height: 500px;">
+			d3
+		</div>
+		
+		
+		
+	</body>
+	<script type="text/javascript">
+		//			var a = new Array(111, 222, 333, 444, 555)
+		//			var b = new Array(777, 888, 999, 000)
+		//			var c = new Array(123, 456, 789, 0)
+		//			a.join(",");
+		//			b.pop();
+		//			c.shift();
+		//			c.push(1);
+		//			c.unshift(11);
+		//			a.slice(1, 4);
+		//			a.reverse();
+		//			a.sort(function(v1, v2) {
+		//				console.log(v1, v2);
+		//			});
+		//			function inheritPrototype(subType, superType) {
+		//				function InheritObj() {};
+		//				InheritObj.prototype = superType.prototype;
+		//				var prototype = new InheritObj(); //创建对象
+		//				prototype.constructor = subType; //增强对象
+		//				subType.prototype = prototype; //指定对象
+		//			};
+		//
+		//			function SuperType(name) {
+		//				this.name = name;
+		//				this.colors = ["red", "blue", "green"];
+		//			};
+		//			SuperType.prototype.sayName = function() {
+		//				alert(this.name);
+		//			};
+		//
+		//			function SubType(name, age) {
+		//				SuperType.call(this, name);
+		//				this.age = age;
+		//			};
+		//			inheritPrototype(SubType, SuperType);
+		//			SubType.prototype.sayAge = function() {
+		//				alert(this.age);
+		//			};
+		//			var a = new SubType();
+		//			var b = new SubType();
+
+		mybtn.addEventListener("click", cli, true);
+		
+		
+		
+		function cli(a) {
+			console.log(event.type);
+			//this.removeEventListener("click",cli,true);
+		}
+		
+//		d1.onmouseenter=function () {
+//			console.log("enter");
+//		}
+//		
+//		d1.onmouseleave=function () {
+//			console.log("leave");
+//		}
+		d1.onmouseout=function () {
+			console.log("out");
+		}
+		
+		d1.onmouseover=function () {
+			console.log("over");
+		}
+		
+		mytxt.addEventListener("textInput",function () {
+			console.log(event);
+		},false);
+		
+		document.body.onmousewheel=function () {
+			console.log(event)
+		}
+		
+//		document.body.onkeydown=function () {
+//			console.log(event)
+//		}
+		
+		document.body.onkeypress=function () {
+			console.log(event)
+		}
+		
+		
+		d1.onclick=function () {
+			console.log("client:x="+event.clientX+"-y:"+event.clientY);
+			console.log("client:x="+event.pageX+"-y:"+event.pageY);
+			console.log(event);
+		}
+		
+		
+//		window.onresize=function () {
+//			console.clear();
+//			console.log(document.body.clientWidth);
+//		}
+//		
+//		window.onscroll=function () {
+//			console.clear();
+//			console.log(document.body.scrollTop);
+//		}
+		
+	</script>
+
+</html>

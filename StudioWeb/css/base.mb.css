@@ -1,0 +1,20 @@
+/*
+ *  author: jasnature
+ *  email : 276227015@qq.com
+ *  last update : 2015-10-10
+ *  desc : 手机端定义reset样式，覆盖base.css样式
+ * */
+@charset "utf-8";
+
+body {
+	font: normal 14em Helvetica, Arial, sans-serif;
+}
+h1 {
+	font-size: 2.1em;
+}
+small{
+	font-size: 12em;
+}
+img { width: 100%; }
+img, object { max-width: 100%;}
+img { -ms-interpolation-mode: bicubic; }

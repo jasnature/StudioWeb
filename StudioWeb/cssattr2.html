@@ -1,0 +1,99 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+"http://www.w3.org/TR/html4/strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title></title>
+	</head>
+	<style type="text/css">
+		#menu ul{
+			list-style-type: none;
+		}
+		#menu>ul>li {
+			display: inline-block;
+			margin-left: 15px;
+			border: 1px solid green;
+			padding: 3px 3px 3px 3px;
+		}
+		#menu a {
+			text-decoration: none;
+			display: block;
+			width: 130px;
+			height: 22px;
+		}
+		#menu>ul {
+			height: 30px;
+			z-index: 90px;
+		}
+		#menu>ul>li ul {
+			display: none;
+			position: absolute;
+			margin: 0px;
+			margin-top: 5px;
+			padding: 5px 5px 5px 5px;
+			background: #c1cd94;
+			box-shadow: 2px 2px 2px #000;
+			-webkit-box-shadow: 2px 2px 2px #000;
+			-moz-box-shadow: 2px 2px 2px #123;
+		}
+		#menu>ul>li>ul li {
+			position: relative;
+		}
+		
+		#menu>ul>li>ul>li ul{
+			left: 80px;
+			width: 150px;
+			top: 0px;
+			z-index: 99px;
+		}
+		
+		#menu li:hover>ul {
+			display: block;
+		}
+	</style>
+
+	<body>
+<ul style="list-style: url(img/new2.png) square inside;">
+	<li style="line-height: 80px; vertical-align: top;">1231</li>
+</ul>
+		<div id="menu">
+			<ul>
+				<li>
+					<a href="javascript:;">菜单01</a>
+					<ul>
+						<li><a href="javascript:;">子菜单1-1</a></li>
+						<li><a href="javascript:;">子菜单1-2</a></li>
+						<li><a href="javascript:;">子菜单1-3</a></li>
+						<li><a href="javascript:;">子菜单1-4</a>
+							<ul>
+								<li><a href="javascript:;">子菜单1-4-1</a></li>
+								<li><a href="javascript:;">子菜单1-4-2</a></li>
+								<li><a href="javascript:;">子菜单1-4-3</a></li>
+							</ul>
+						</li>
+						<li><a href="javascript:;">子菜单1-5</a></li>
+					</ul>
+				</li>
+				<li><a href="javascript:;">菜单02</a></li>
+				<li><a href="javascript:;">菜单03</a>
+					<ul>
+						<li><a href="javascript:;">子菜单3-1</a></li>
+						<li><a href="javascript:;">子菜单3-2</a></li>
+						<li><a href="javascript:;">子菜单3-3</a></li>
+					</ul>
+				</li>
+			</ul>
+		</div>
+		
+		<table border="" cellspacing="0" cellpadding="0" style="table-layout:auto;border: 1px solid red; border-collapse: collapse; empty-cells: hide;">
+			<tr><th>Header</th><th>Header</th><th>Header</th></tr>
+			<tr><td>Data</td><td>Data</td><td>Data</td></tr>
+			<tr><td>Data</td><td>Data</td><td>Data</td></tr>
+<tr><td>123</td><td>123</td><td></td></tr>
+		</table>
+
+	</body>
+
+</html>
