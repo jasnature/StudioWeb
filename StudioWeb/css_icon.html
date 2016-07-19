@@ -4,8 +4,12 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>CSS画图标</title>
-		<link rel="stylesheet" type="text/css" href="abcd.css"/>
+		<link rel="stylesheet" type="text/css" href="abcd.css" />
 		<style type="text/css">
+			div {
+				display: inline-block;
+			}
+			
 			.bo {
 				width: 300px;
 				height: 300px;
@@ -89,30 +93,50 @@
 				transform: rotate(-45deg);
 			}
 			
-			.wechart:hover:after{
+			.wechart:hover:after {
 				animation: wejiao 1s infinite linear;
-				animation-iteration-count:infinite;
+				animation-iteration-count: infinite;
 			}
 			
-			.wechart:hover>.w_inner::after{
+			.wechart:hover>.w_inner::after {
 				animation: rwejiao 1s infinite linear;
-				animation-iteration-count:infinite;
+				animation-iteration-count: infinite;
 			}
 			
-			@keyframes wejiao{
-				0%{transform: rotate(45deg);}
-				25%{transform: rotate(55deg);}
-				50%{transform: rotate(45deg);}
-				75%{transform: rotate(30deg);}
-				100%{transform: rotate(45deg);}
+			@keyframes wejiao {
+				0% {
+					transform: rotate(45deg);
+				}
+				25% {
+					transform: rotate(55deg);
+				}
+				50% {
+					transform: rotate(45deg);
+				}
+				75% {
+					transform: rotate(30deg);
+				}
+				100% {
+					transform: rotate(45deg);
+				}
 			}
 			
-			@keyframes rwejiao{
-				0%{transform: rotate(-45deg);}
-				25%{transform: rotate(-55deg);}
-				50%{transform: rotate(-45deg);}
-				75%{transform: rotate(-30deg);}
-				100%{transform: rotate(-45deg);}
+			@keyframes rwejiao {
+				0% {
+					transform: rotate(-45deg);
+				}
+				25% {
+					transform: rotate(-55deg);
+				}
+				50% {
+					transform: rotate(-45deg);
+				}
+				75% {
+					transform: rotate(-30deg);
+				}
+				100% {
+					transform: rotate(-45deg);
+				}
 			}
 			
 			.taiji {
@@ -158,13 +182,12 @@
 				}
 			}
 			
-			.qintao{
+			.qintao {
 				background-color: #E64646;
 				position: relative;
-				
 			}
 			
-			.qintao:after{
+			.qintao:after {
 				position: absolute;
 				height: 350px;
 				width: 100px;
@@ -174,9 +197,33 @@
 				border: 15px solid #FFFFFF;
 				background-color: transparent;
 				border-radius: 120% 120% 0 0 / 50% 50% 0 0;
-				box-shadow:  -1px -1px 3px 1px #B0B0B0 , 1px 1px 3px 1px #B0B0B0;
+				box-shadow: -1px -1px 3px 1px #B0B0B0, 1px 1px 3px 1px #B0B0B0;
 			}
 			
+			.combg {
+				background-color: #08C406;
+				height: 200px;
+				width: 200px;
+				margin-left: 10px;
+			}
+			
+			.geshan1 {
+				/*background: -webkit-linear-gradient( top, #ccc, #000);*/
+				background-image: linear-gradient(45deg, rgba(255, 255, 255, .2) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .2) 50%, rgba(255, 255, 255, .2) 75%, transparent 75%, transparent);
+				background-size: 21px 21px;
+			}
+			
+			.geshan2 {
+				/*background: -webkit-linear-gradient( top, #ccc, #000);*/
+				background-image: linear-gradient(-45deg, rgba(255, 255, 255, .2) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .2) 50%, rgba(255, 255, 255, .2) 75%, transparent 75%, transparent);
+				background-size: 21px 21px;
+			}
+			
+			.geshan3{
+				    background-image: linear-gradient(rgba(255, 255, 255, .3) 50%, rgba(159, 59, 159, .3) 50%);
+				    background-size: 10px 10px;
+			}
+
 		</style>
 	</head>
 
@@ -185,13 +232,25 @@
 			<div class="w_inner"></div>
 		</div>
 		<div class="qintao bo">
-			
+
 		</div>
 		<div class="taiji bo">
 
 		</div>
 		<div class="T">
-			
+
+		</div>
+
+		<div class="combg geshan1">
+
+		</div>
+		
+		<div class="combg geshan2">
+
+		</div>
+		
+		<div class="combg geshan3">
+
 		</div>
 	</body>
 
