@@ -18,6 +18,24 @@
 			.box1:hover {
 				background-color: red;
 			}
+			.bg{
+				width: 500px;
+				height: 500px;
+				background-color: #3A3E4F;
+				position: relative;
+			}
+			
+			.line{
+				position: absolute;
+				left: 50px;
+				top: 50px;
+				height: 300px;
+				width: 3px;
+				background-color: #414759;
+				border: 0px;
+				border-right: 2px solid #313141;
+				box-shadow: 2px -1px 0px 1px #353947;
+			}
 		</style>
 		<script type="text/javascript">
 			
@@ -27,6 +45,23 @@
 	<body>
 		<div class="box1">box1</div>
 		<div class="box2">box2</div>
+		<div class="bg">
+			<div class="line">
+				
+			</div>
+		</div>
+		<video width="800" height="">
+			<source src="myvideo.mp4" type="video/mp4"></source>
+			<source src="myvideo.ogv" type="video/ogg"></source>
+			<source src="myvideo.webm" type="video/webm"></source>
+			<object width="" height="" type="application/x-shockwave-flash" data="myvideo.swf">
+				<param name="movie" value="myvideo.swf" />
+				<param name="flashvars" value="autostart=true&amp;file=myvideo.swf" />
+			</object>
+			当前浏览器不支持 video直接播放，点击这里下载视频： <a href="myvideo.webm">下载视频</a>
+			
+		</video>
+		
 	</body>
 
 </html>
